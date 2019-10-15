@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <title>Senate</title>
+<!--FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 offset-sm-1">
+                <a href="home.html">
+                <img class="logo" src="assets/img/LOGOTGIF.jpg">
+                </a>
+            </div>
+            
+            <div class="col-sm-2 offset-sm-5 align-self-center text-right">
+                    <a href="mailto:info@tgif.net" target="_top"><i class="far fa-envelope class="text-right></i> info@tgif.net</a>
+            </div>  
+        </div> 
+        <div class="row">
+            <div class="menu col-sm-12 offset-sm-1">                
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Congress 113</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="house-data.html">House</a>
+                            <a class="dropdown-item" href="senate-data.html">Senate</a>                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Attendance</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="house-attendance.html">House</a>
+                                <a class="dropdown-item" href="senate-attendance.html">Senate</a> 
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="house-loyalty.html">House</a>
+                            <a class="dropdown-item" href="senate-loyalty.html">Senate</a>                            
+                        </div>
+                    </li>         
+                </ul>
+            </div>
+        </div>
+
+        <div id="content-container1" class="row">
+            
+            <div id="senate-data" class="offset-sm-1 col-10">
+                <h1>Senators</h1>
+                <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. 
+                    Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. 
+                    The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to 
+                    their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, 
+                    military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+            </div>
+        </div>
+    <!--Table container-->
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1">
+                <div class="row">
+                    <div class="col-sm-8 d-flex flex-row">
+                        <p>Filter by party: </p>
+                        <label> <input type="checkbox" name="Republican" value="R" class="checkbox" onclick="checking()"/> Republican</label>
+                        <label> <input type="checkbox" name="Democrat" value="D" class="checkbox" onclick="checking()"/> Democrat</label>
+                        <label> <input type="checkbox" name="Indepedent" value="I" class="checkbox"onclick="checking()"/> Indepedent</label>
+                    </div>
+                    <div class="col-sm-4 d-flex flex-row">
+                        <p>Filter by State:</p>
+                        <form name="filter" id="FilterForm" action="" method="">
+                            <select id="state-filter" class="filterstate" onchange="checking()"> 
+                                    
+                            </select> 
+                        </form>
+                                  
+                    </div>
+                </div>
+                <div class="row table-responsive">
+                    <div class="col-sm-12">
+                        <table class="table table-striped table-borderless text-center table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="namemembers">Senator</th>
+                                    <th>Party</th>
+                                    <th>State</th>
+                                    <th>Seniority</th>
+                                    <th>% of votes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">                       
+
+                            </tbody>                        
+                        </table>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    <!--Fin table-container-->  
+        <div id="footer" class="row">
+            <div class="col-sm-12 align-self-center text-center">
+                <p>© 2019 TGIF - All Rights Reserved</p>
+            </div>
+        </div>
+
+    <!--Fin div main-container-->  
+    </div>
+</body>
+</html>
+
+<!-- <script type="text/javascript" src="assets/js/pro-congress-113-senate.js"></script> -->
+
+
+<script type="text/javascript" src="assets/js/main.js"></script>
